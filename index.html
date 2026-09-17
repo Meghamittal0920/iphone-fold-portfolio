@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Megha Mittal · Frontend Developer</title>
+  <meta name="description" content="Megha Mittal is a frontend developer who turns anime into interactive websites. Unfold the portfolio.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Megha Mittal">
+  <meta property="og:title" content="Megha Mittal · I don’t watch anime, I code anime.">
+  <meta property="og:description" content="A portfolio that unfolds. Frontend, creative coding and anime-inspired web experiences.">
+  <meta property="og:image" content="./previews/inner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Megha Mittal · I don’t watch anime, I code anime.">
+  <meta name="twitter:description" content="A portfolio that unfolds. Frontend, creative coding and anime-inspired web experiences.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+<main>
+  <header>
+    <a class="brand" href="./" aria-label="Megha Mittal, home"><span class="brand-mark" aria-hidden="true">m</span>megha<span>.mittal</span></a>
+    <nav aria-label="Social links">
+      <a href="https://github.com/Meghamittal0920" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.instagram.com/codergirl.megha/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.youtube.com/@codergirlmegha" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a class="nav-cta" href="mailto:meghamittal563@gmail.com">Say hi <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <div class="preview-intro">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Frontend developer · open to collaborate</p>
+    <h1>I don’t watch anime,<br><em>I code anime.</em></h1>
+    <p class="lede">A portfolio that unfolds. Open it, drag it, look closer.</p>
+  </div>
+
+  <div id="viewport" aria-label="Foldable portfolio preview. Drag to rotate; scroll to zoom."></div>
+  <div id="loading" class="page-loader-shell" data-page-loader data-phase="loading"><output class="page-loading-indicator" aria-label="Loading preview" style="transform:scaleX(.08)"></output></div>
+  <p id="status" role="status"></p>
+
+  <section class="control-dock" aria-label="Preview controls">
+    <div class="controls">
+      <div class="fold-menu">
+        <button id="closed" disabled>Closed</button>
+        <input id="angle" aria-label="Opening angle" type="range" min="0" max="180" value="0" step="0.1" disabled>
+        <button id="opened" disabled>Open</button>
+      </div>
+      <button id="play" disabled>Play</button>
+    </div>
+  </section>
+
+  <div class="info-dock">
+    <button id="info-toggle" aria-label="About Megha" aria-expanded="false" aria-controls="preview-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></button>
+    <aside id="preview-info" hidden aria-label="About Megha">
+      <div class="info-heading"><h2>Hi, I’m <em>Megha</em></h2><button id="info-close" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+      <p id="surface-state">The cover introduces me. Open the device to explore the work.</p>
+      <p>I build responsive, user-friendly web experiences and love turning anime scenes into interactive sites. Always learning, always building.</p>
+      <ul class="chips" aria-label="Tech I use"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Three.js</li><li>SQL</li><li>SAP</li></ul>
+      <h3>Selected work</h3>
+      <ol class="work">
+        <li><span>Naruto — Sage Mode</span><small>HTML · CSS · JS</small></li>
+        <li><span>Zoro — King of Hell</span><small>HTML · CSS · JS</small></li>
+        <li><span>Demon Slayer — Yoriichi</span><small>HTML · CSS · JS</small></li>
+        <li><span>JJK — Sukuna</span><small>HTML · CSS · JS</small></li>
+        <li><span>One Piece 3D</span><small>TypeScript · Three.js</small></li>
+      </ol>
+      <p><a href="https://github.com/Meghamittal0920?tab=repositories" target="_blank" rel="noopener noreferrer">See every repository ↗</a></p>
+      <p class="fine">Drag the device to change your view, scroll to zoom. The fold is adapted from <a href="https://github.com/chuspeeism/iphone-duo" target="_blank" rel="noopener noreferrer">iPhone Duo by jadon7 ↗</a>.</p>
+      <div class="info-actions"><button id="reset-view" disabled>Reset view</button><button id="demo-play" hidden>Pause demo</button><a href="#customize" id="customize-open">Try your design</a></div>
+      <output id="degrees" for="angle" hidden>0°</output>
+    </aside>
+  </div>
+
+  <aside id="customize" hidden aria-label="Try your design"><div class="info-heading"><h2>Try your design</h2><button id="customize-close" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><div class="customize-body">
+    <p>Start with <button class="inline-action" data-upload="outer-upload">an image for the cover</button>, then add <button class="inline-action" data-upload="inner-upload">another for the open screen</button>. Your images stay in this browser.</p>
+    <input id="outer-upload" type="file" accept="image/png,image/jpeg,image/webp" hidden disabled>
+    <input id="inner-upload" type="file" accept="image/png,image/jpeg,image/webp" hidden disabled>
+    <p>Try it against <label class="background-choice">a different background <input id="background" type="color" value="#ffffff" aria-label="Background color"></label>, or <button id="reset-screens" class="inline-action" disabled>restore my portfolio</button>.</p>
+  </div></aside>
+
+  <footer class="page-foot"><span>© 2026 Megha Mittal</span><span>Code is my art, logic is my superpower <span class="heart" aria-hidden="true">♥</span></span></footer>
+</main>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
